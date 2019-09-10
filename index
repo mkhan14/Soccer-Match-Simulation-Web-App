@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!-- Mahin Khan -->
+<html> <!-- I am a parent -->
+	<head> <!-- Child of html tag -->
+		<title> 
+			Soccer Match Simulation
+		</title>
+		<style>
+			#gameform
+			{
+				text-align:center;
+			}
+			
+			#text
+			{
+				text-align:center;
+			}
+			
+			#head
+			{
+				text-align:center;
+				border-radius:5px;
+				color:white;
+				border-style:solid;
+				background-color:black;
+				padding-right:10px;
+				padding-left:10px;
+			}
+			
+			div.bkgn
+			{
+				position:fixed;
+				top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+	
+				z-index:-1;
+			}
+		
+			div.bkgn > img
+			{
+				width:100%;
+				height:100%;
+				opacity:0.7;
+			}
+		
+			#info
+			{
+				text-align:center;
+				border:2px solid black;
+				border-radius:100px;
+				background-color:white;
+				opacity: 0.9;
+				color:black;
+			}		
+		</style> <!-- CSS goes in here -->
+		<script>
+			function initialize()
+			{
+				teamChange = document.getElementById("team");
+				teamText = document.getElementById("teamtext");
+				simForm = document.getElementById("gameform");
+				teamInfo = document.getElementsByClassName("info");
+				chls = document.getElementById("yourCFC");
+				bm = document.getElementById("yourBM");
+				ss = document.getElementById("yourSS");
+				ochls = document.getElementById("oppCFC");
+				oss = document.getElementById("oppSS");
+				obm = document.getElementById("oppBM");
+				text = document.getElementById("texttest");
+				//otext = document.getElementById("otexttest");
+				
+				chelseaEleven = document.getElementsByClassName("chelseaclass");
+				bmEleven = document.getElementsByClassName("bmclass");
+				ssEleven = document.getElementsByClassName("ssclass");
+				
+				
+				court = document.getElementById("cour");
+				begov = document.getElementById("bego");
+			}
+
+			function teamchange()
+			{
+				display();
+			}
+			
+			function display()
+			{
+				if(chls.selected == true && obm.selected == true)
+				{
+					text.innerHTML = "Your Players:" + "<br>"
+					+ "GK-Courtois(86)" + "<br>" + "F-Costa(86)" + "<br>" + "F-Remy(81)" + "<br>" + "M-Hazard(89)" + "<br>" + "M-Matic(84)" + "<br>" + "M-Oscar(84)" + "<br>" + "M-Willian(82)" + "<br>" + "D-Cahill(83)" + "<br>" + "D-Zouma(79)" + "<br>" + "D-Baba(78)" + "<br>" + "D-Miazga(70)" + "<br>" + "<br>"
+					+ "Opposing Players:" + "<br>"
+					+ "GK-Sommer(86)" + "<br>" + "F-Raffael(81)" + "<br>" + "F-Stindl(80)" + "<br>" + "M-Xhaka(82)" + "<br>" + "M-Traore(78)" + "<br>" + "M-Johnson(78)" + "<br>" + "M-Hofmann(76)" + "<br>" + "D-Stranzl(81)" + "<br>" + "D-Jantschke(80)" + "<br>" + "D-Wendt(77)" + "<br>" + "D-Korb(75)";
+					
+				}
+				else
+				{
+					if(chls.selected == true && oss.selected == true)
+					{
+						text.innerHTML = "Your Players:" + "<br>"
+						+ "GK-Courtois(86)" + "<br>" + "F-Costa(86)" + "<br>" + "F-Remy(81)" + "<br>" + "M-Hazard(89)" + "<br>" + "M-Matic(84)" + "<br>" + "M-Oscar(84)" + "<br>" + "M-Willian(82)" + "<br>" + "D-Cahill(83)" + "<br>" + "D-Zouma(79)" + "<br>" + "D-Baba(78)" + "<br>" + "D-Miazga(70)" + "<br>" + "<br>"
+						+ "Opposing Players:" + "<br>"
+						+ "GK-Frei(68)" + "<br>" + "F-Dempsey(81)" + "<br>" + "F-Valdez(80)" + "<br>" + "M-Neagle(69)" + "<br>" + "M-Alonso(77)" + "<br>" + "M-Pineda(67)" + "<br>" + "M-Rose(65)" + "<br>" + "D-Mears(70)" + "<br>" + "D-Evans(69)" + "<br>" + "D-Jones(65)" + "<br>" + "D-Remick(64)";
+						
+					}
+					else
+					{
+						if(bm.selected == true && ochls.selected == true)
+						{
+							text.innerHTML = "Your Players:" + "<br>"
+							+ "GK-Sommer(86)" + "<br>" + "F-Raffael(81)" + "<br>" + "F-Stindl(80)" + "<br>" + "M-Xhaka(82)" + "<br>" + "M-Traore(78)" + "<br>"+ "M-Johnson(78)" + "<br>" + "M-Hofmann(76)" + "<br>" + "D-Stranzl(81)" + "<br>" + "D-Jantschke(80)" + "<br>" + "D-Wendt(77)" + "<br>" + "D-Korb(75)" + "<br>" + "<br>"
+							+ "Opposing Players:" + "<br>"
+							+ "GK-Courtois(86)" + "<br>" + "F-Costa(86)" + "<br>" + "F-Remy(81)" + "<br>" + "M-Hazard(89)" + "<br>" + "M-Matic(84)" + "<br>" + "M-Oscar(84)" + "<br>" + "M-Willian(82)" + "<br>" + "D-Cahill(83)" + "<br>" + "D-Zouma(79)" + "<br>" + "D-Baba(78)" + "<br>" + "D-Miazga(70)";
+						}
+						else
+						{
+							if(bm.selected == true && oss.selected == true)
+							{
+								text.innerHTML = "Your Players:" + "<br>"
+								+ "GK-Sommer(86)" + "<br>" + "F-Raffael(81)" + "<br>" + "F-Stindl(80)" + "<br>" + "M-Xhaka(82)" + "<br>" + "M-Traore(78)" + "<br>"+ "M-Johnson(78)" + "<br>" + "M-Hofmann(76)" + "<br>" + "D-Stranzl(81)" + "<br>" + "D-Jantschke(80)" + "<br>" + "D-Wendt(77)" + "<br>" + "D-Korb(75)"  + "<br>" + "<br>" 
+								+ "Opposing Players:" + "<br>"
+								+ "GK-Frei(68)" + "<br>" + "F-Dempsey(81)" + "<br>" + "F-Valdez(80)" + "<br>" + "M-Neagle(69)" + "<br>" + "M-Alonso(77)" + "<br>" + "M-Pineda(67)" + "<br>" + "M-Rose(65)" + "<br>" + "D-Mears(70)" + "<br>" + "D-Evans(69)" + "<br>" + "D-Jones(65)" + "<br>" + "D-Remick(64)";
+							}
+							else
+							{
+								if(ss.selected == true && ochls.selected == true)
+								{
+									text.innerHTML = "Your Players:" + "<br>"
+									+ "GK-Frei(68)" + "<br>" + "F-Dempsey(81)" + "<br>" + "F-Valdez(80)" + "<br>" + "M-Neagle(69)" + "<br>" + "M-Alonso(77)" + "<br>" + "M-Pineda(67)" + "<br>" + "M-Rose(65)" + "<br>" + "D-Mears(70)" + "<br>" + "D-Evans(69)" + "<br>" + "D-Jones(65)" + "<br>" + "D-Remick(64)"  + "<br>" + "<br>"
+									+ "Opposing Players:" + "<br>"
+									+ "GK-Courtois(86)" + "<br>" + "F-Costa(86)" + "<br>" + "F-Remy(81)" + "<br>" + "M-Hazard(89)" + "<br>" + "M-Matic(84)" + "<br>" + "M-Oscar(84)" + "<br>" + "M-Willian(82)" + "<br>" + "D-Cahill(83)" + "<br>" + "D-Zouma(79)" + "<br>" + "D-Baba(78)" + "<br>" + "D-Miazga(70)";
+								}
+								else
+								{
+									if(ss.selected == true && obm.selected == true)
+									{
+										text.innerHTML = "Your Players:" + "<br>"
+										+ "GK-Frei(68)" + "<br>" + "F-Dempsey(81)" + "<br>" + "F-Valdez(80)" + "<br>" + "M-Neagle(69)" + "<br>" + "M-Alonso(77)" + "<br>" + "M-Pineda(67)" + "<br>" + "M-Rose(65)" + "<br>" + "D-Mears(70)" + "<br>" + "D-Evans(69)" + "<br>" + "D-Jones(65)" + "<br>" + "D-Remick(64)"  + "<br>" + "<br>"
+										+ "Opposing Players:" + "<br>"
+										+ "GK-Sommer(86)" + "<br>" + "F-Raffael(81)" + "<br>" + "F-Stindl(80)" + "<br>" + "M-Xhaka(82)" + "<br>" + "M-Traore(78)" + "<br>"+ "M-Johnson(78)" + "<br>" + "M-Hofmann(76)" + "<br>" + "D-Stranzl(81)" + "<br>" + "D-Jantschke(80)" + "<br>" + "D-Wendt(77)" + "<br>" + "D-Korb(75)";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		</script> <!-- Javascript goes in here -->
+	</head>
+	<body onload = "initialize();">
+		<div class = "bkgn">
+			<img src = "images/fifa16ber.jpg" />
+		</div>
+		<div id = "head">
+			Soccer Match Simulation
+		</div>
+		<br />
+		<form id = "info" method = "post" action = "simulation.php">
+			Your Team:
+			<select name = "playerTeam">
+					<option onclick = "teamchange();"id = "yourCFC" value = "ChelseaFC" name = "yourteam" selected>Chelsea FC</option>
+					<option onclick = "teamchange();"id = "yourBM" value = "BorussiaM" name = "yourteam">Borussia Monchengladbach</option>
+					<option onclick = "teamchange();" id = "yourSS" value = "SeattleSounders" name = "yourteam">Seattle Sounders</option>
+			</select>
+			
+			<br />
+			
+			Opposing Team:
+			<select name = "oppTeam">
+					<option onclick = "teamchange();"id = "oppCFC" value = "ChelseaFC" name = "oppoteam" selected>Chelsea FC</option>
+					<option onclick = "teamchange();"id = "oppBM" value = "BorussiaM" name = "oppoteam">Borussia Monchengladbach</option>
+					<option onclick = "teamchange();" id = "oppSS" value = "SeattleSounders" name = "oppoteam">Seattle Sounders</option>
+			</select>
+		<br />
+			<input type = "submit" />
+			
+			<div id = "texttest">
+		
+			</div>
+		</form>
+		
+		
+		
+		<!--<div id =  "otexttest">
+		
+		</div> -->
+	</body>
+</html>
